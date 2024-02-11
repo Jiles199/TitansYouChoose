@@ -1,0 +1,100 @@
+wins = 0
+losses = 0
+playAgain = True
+name = input("Please tell me your name: ")
+print(f"Welcome, {name.capitalize()} to Titans: You Choose! In this game, you get to choose what happens in the story.")
+
+while playAgain:
+    print("You set out on a journey to defeat one of the two Titan Twins: the Shadow Titan or the Magic Titan. You won't be able to make this journey alone. You'll need training, weaponry, and a companion.")
+
+
+    validInput = False
+    while not validInput:
+        training = input(
+            "For your training, you can choose to enter the Dark School of Wizardy or the Night Club of Warriors. Which do you choose? (wizard/warrior): ").lower()
+        if training == "wizard":
+            print(f"Congratulations {name.capitalize()}! You have graduated from the Dark School of Wizardy and earned the Scepter of Light Magic.")
+            validInput = True
+        elif training == "warrior":
+            print(f"Congratulations {name.capitalize()}! You have graduated from the Night Club of Warriors and earned the Sword, Bow, Shield, and Armor of the Elite Warriors.")
+            validInput = True
+        else:
+            print("Invalid entry. Please try again.")
+
+    if training == "wizard":
+        companion = input("As a wizard, you have two choices for your companion: Merlin or Azrael. Merlin is a master of light magic and can destroy almost any evil. Azrael is a master of shadow magic and can destroy all sorts of light magic. Which do you choose? (merlin/azrael): ").lower()
+        validInput1 = False
+        while not validInput1:
+            if companion == "merlin":
+                print(f"Wizard {name.capitalize()}, you have chosen Merlin as your companion.")
+                validInput1 = True
+            elif companion == "azrael":
+                print(f"Wizard {name.capitalize()}, you have chosen Azrael as your companion.")
+                validInput1 = True
+            else:
+                companion = input("Not a valid entry. Please try again (merlin/azrael): ").lower()
+
+    elif training == "warrior":
+        companion = input("As a warrior, you have two choices for your companion: Beowulf or Megablade. Beowulf is a very strong warrior and has defeated Grendel, Grendel's mother, a dragon and more. Megablade is a noble warrior that has conquered the darkest of evil. Which do you choose? (beowulf/megablade): ").lower()
+        validInput2 = False
+        while not validInput2:
+            if companion == "beowulf":
+                print(f"Warrior {name.capitalize()}, you have chosen Beowulf as your companion.")
+                validInput2 = True
+            elif companion == "megablade":
+                print(f"Warrior {name.capitalize()}, you have chosen Megablade as your companion.")
+                validInput2 = True
+            else:
+                companion = input("Not a valid entry. Please try again. (beowulf/megablade): ").lower()
+
+    titan = input("There are two Titans that you can attempt to defeat... the Shadow Titan or the Magic Titan. The Shadow Titan is made of pure dark energy. The Magic Titan is made from a mix of both light and dark magic. Which do you choose to fight? (shadow/magic): ").lower()
+    validInput3 = False
+    while not validInput3:
+        if titan == "shadow":
+            print(f'OK {training.capitalize()} {name.capitalize()}, you have chosen to fight the Shadow Titan with {companion.capitalize()} as your companion.')
+            validInput3 = True
+        elif titan == "magic":
+            print(f'OK {training.capitalize()} {name.capitalize()}, you have chosen to fight the Magic Titan with {companion.capitalize()} as your companion.')
+            validInput3 = True
+        else:
+            titan = input("Not a valid entry. Please try again. (shadow/magic): ").lower()
+
+    if companion == "merlin" and titan == "shadow":
+        print("You step into the shadow portal and feel a strange sensation as you are teleported to the Shadow Titan's realm. You step out of the portal and head towards the cave where the Shadow Titan lurks. But before you step foot in the cave, you hear a blood curdling roar from the depths of the cave. The Shadow Titan comes leaping out, shattering tons of shadow crystals in its path. You and Merlin dash backwards to avoid getting trampled by the Shadow Titan. When the titan lands, the two of you charge a powerful spell that will emit a huge beam of light and magical power. This will deal massive damage to the Shadow Titan, also creating a sky beam. But the Shadow Titan also charges his own spell that makes him invincible and surrounds him in a circular area of dark energy. It also creates a gravitational pull that tries to suck you in while it's charging.")
+        print("Once the Shadow Titan's spell is fully charged, he can ram into anything in his path. The two of you try to keep charging your spell while not getting sucked in by his. Luckily, his spell finishes charging right after yours does. The two of you use your spells together and deal massive damage to the Shadow Titan, disabling his spell before he can ram into you. The two of you keep spamming smaller spells until you demolish the Shadow Titan. You won!")
+        wins += 1
+    elif companion == "merlin" and titan == "magic":
+        print("You step into the magic portal and feel a strange sensation as you are teleported to the Magic Titan's realm. You step out of the portal and head towards the academy archives where the Magic Titan lurks, defeating any monsters in your path. But before you step foot in the archives, you hear a blood curdling roar from the depths of the archives. The Magic Titan teleports to the lower end of the steps and comes charging towards you! You and Merlin dash away before the titan can charge you. The two of you charge a powerful spell that will create a blinding light from your wands and will put light in the Magic Titan. The Magic Titan is charging his own spell that will put the two of you into a dark and evil state. It will make you serve as part of the academy's army. Luckily your spell is fully charged just before the titan can fully charge his. The two of you make blinding lights from your wands and they shine straight into the Magic Titan's eyes, blinding him so he can't see his targets. In a state of confusion, he accidentally stops his spell. More and more light shines into him. The Magic Titan begins to purify! After awhile, the Magic Titan is fully purified. The two of you take the Magic Titan through the portal and from that day on, he serves as a member of the light forces. You win!")
+        wins += 1
+    elif companion == "azrael" and titan == "shadow":
+        print("You step into the shadow portal and feel a strange sensation as you are teleported to the Shadow Titan's realm. You step out of the portal and head towards the cave where the Shadow Titan lurks. But before you step foot in the cave, you hear a blood curdling roar from the depths of the cave. The Shadow Titan comes leaping out, shattering tons of shadow crystals in its path! You and Azrael run away from the Shadow Titan before he can stomp on you. Then the two of you start rapid spamming spells at him, but Azrael's only serve to make the Shadow Titan even stronger. The Shadow Titan shoots a ball of dark energy from his mouth, hitting you and making you fall to the ground. Azrael then uses his dark spells to claim the Shadow Titan for the dark forces. You have chosen the absolute wrong companion. You lose!")
+        losses += 1
+    elif companion == "azrael" and titan == "magic":
+        print("You step into the magic portal and feel a strange sensation as you are teleported to the Magic Titan's realm. You step out of the portal and head towards the academy archives where the Magic Titan lurks, defeating any monsters in your path. But before you step foot in the archives, you hear a blood curdling roar from the depths of the archives. The Magic Titan teleports to the lower end of the steps and comes charging towards you! You and Azrael dash away before the titan can charge you. Then the two of you start rapid spamming spells at him. Since the Magic Titan is made of a mixture of light and dark magic, and with Azrael being a more experienced wizard, he puts more evil into the Magic Titan than you do light. Therefore, you are working against your companion and Azrael wins. Azrael's dark magic transforms the Magic Titan into another Shadow Titan! He then claims it for the dark forces. You have chosen the absolute wrong companion. You lose!")
+        losses += 1
+    elif companion == "beowulf" and titan == "shadow":
+        print("You step into the shadow portal and feel a strange sensation as you are teleported to the Shadow Titan's realm. You step out of the portal and head towards the cave where the Shadow Titan lurks. But before you step foot in the cave, you hear a blood curdling roar from the depths of the cave. The Shadow Titan comes leaping out, shattering tons of shadow crystals in its path. Beowulf immediately goes after the Shadow Titan and you use the ranged power of your Elite Bow to attack. Beowulf manages to knock down the Shadow Titan and then you come dashing in to join in the melee. Eventually, the two of you manage to turn the Shadow Titan into a bunch of pieces. You have chosen a really strong companion. You win!")
+        wins += 1
+    elif companion == "beowulf" and titan == "magic":
+        print("You step into the magic portal and feel a strange sensation as you are teleported to the Magic Titan's realm. You step out of the portal and head towards the academy archives where the Magic Titan lurks, defeating any monsters in your path. But before you step foot in the archives, you hear a blood curdling roar from the depths of the archives. The Magic Titan teleports to the lower end of the steps and comes charging towards you! You and Beowulf dash away before the titan can charge you. But then Beowulf goes dashing towards the titan to attack. You use your bow to attack as well, but soon Beowulf is struck down. And even with the powers of your elite gear, the Magic Titan manages to strike you down as well. Even though Beowulf is a very strong companion, he doesn't fare well against magic. You lose!")
+        losses += 1
+    elif companion == "megablade" and titan == "shadow":
+        print("You step into the shadow portal and feel a strange sensation as you are teleported to the Shadow Titan's realm. You step out of the portal and head towards the cave where the Shadow Titan lurks. But before you step foot in the cave, you hear a blood curdling roar from the depths of the cave. The Shadow Titan comes leaping out, shattering tons of shadow crystals in its path. You and Megablade run away from the titan to avoid getting stomped. Then Megablade goes into his attack. You attack from a distance and soon the Shadow Titan is knocked down. You run towards him to join Megablade in the melee. You and Megablade manage to demolish the evil creature and prevent him from becoming a further problem in your realm. You win!")
+        wins += 1
+    elif companion == "megablade" and titan == "magic":
+        print("You step into the magic portal and feel a strange sensation as you are teleported to the Magic Titan's realm. You step out of the portal and head towards the academy archives where the Magic Titan lurks, defeating any monsters in your path. But before you step foot in the archives, you hear a blood curdling roar from the depths of the archives. The Magic Titan teleports to the lower end of the steps and comes charging towards you! You and Megablade dash away before the titan can charge you. Megablade charges in to attack. You attack from a distance and eventually the Magic Titan starts losing balance. But then, he roars the most powerful roar towards the ground. Both you and Megablade are sucked into the exact spot that the roar hit. Then the Magic Titan roars again. This time, the magic isn't gravitational, but filled with power. The roar hits both you and Megablade, demolishing your gear. Next, the titan jumps up and attacks, striking both you and Megablade down. Even though Megablade is an extremely powerful warrior, he doesn't fare well against magic. You lose!")
+        losses += 1
+
+    print(f"Your current record is {wins}-{losses}.")
+    checkPlayAgain = input("Would you like to play again? (yes/no): ").lower()
+    validInput4 = False
+    while not validInput4:
+        if checkPlayAgain == "yes":
+            playAgain = True
+            validInput4 = True
+        elif checkPlayAgain == "no":
+            print("Thanks for playing Titans: You Choose.")
+            playAgain = False
+            validInput4 = True
+        else:
+            checkPlayAgain = input("Not a valid entry. Please try again (yes/no): ").lower()
